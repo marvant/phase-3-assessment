@@ -4,7 +4,12 @@ Breed: <%= @pet.breed %><br>
 Age: <%= @pet.age %><br>
 Is it cute? <%= @pet.cute %><br>
 
-<h2>Toys</h2>
+<!-- <h2>Toys</h2>
 <% @pet.toys.each do |toy| %>
 <%= toy.description %>
-<% end %>
+<% end %> -->
+
+<%= link_to 'Show toys', pet_toys_path(@pet), remote: true, :class => 'show-link' %><br>
+
+<div class='toy-list'></div>
+<%= render @pet.toys %>
